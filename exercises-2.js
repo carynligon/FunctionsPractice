@@ -60,11 +60,16 @@ var newPhrase = [];
 function rovarspraket(phrase){
   newArr = phrase.split('');
   for (i=0; i < newArr.length; i++) {
-    if (newArr[i] !== 'a' || newArr[i] !== 'e' || newArr[i] !== 'i' || newArr[i] !== 'o' || newArr[i] !== 'u' || newArr[i] !== '') {
-      console.log('hi');
-      newPhrase += newArr[i] + 'o' + newArr[i];
+    if (newArr[i] === 'a' || newArr[i] === 'e' || newArr[i] === 'i' || newArr[i] === 'o' || newArr[i] === 'u' || newArr[i] === '') {
+      newPhrase.push(newArr[i]);
+    }
+    else {
+      newPhrase.push(newArr[i] + 'o' + newArr[i]);
     }
   }
+  var joinPhrase = newPhrase.join('');
+  return joinPhrase;
+
 }
 
 
